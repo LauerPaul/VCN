@@ -1,0 +1,36 @@
+.systemInfo-widget-wrapper(v-if="support_status !== false || notify_status !== false || volumeControl_status !== false")
+	.buttons-line
+		span.title {{ text.title }}
+
+		//- supprot
+		span.iconCircle(v-if="support_status !== false",
+						@click="supportToggle",
+						:class="{active: supportWindow}")
+			i.mdi.mdi-help-circle
+
+		//- notify
+		span.iconCircle(v-if="notify_status !== false",
+						@click="notifyWindowToggle",
+						:class="{active: notifyWindow}")
+			i.mdi.mdi-bell
+		
+		//- volume
+		span.iconCircle(v-if="volumeControl_status !== false",
+						@click="volumeToggle",
+						:title="(volume ? text.volumeOnText : text.volumeOffText)",
+						:class="{active: volume}")
+			i.mdi.mdi-volume-medium(v-if="volume")
+			i.mdi.mdi-volume-mute(v-else)
+	
+	//- support module
+	transition(name="slide-fade")
+		.content-case(v-if="supportWindow || notifyWindow")
+
+			support-widget(v-if="supportWindow",
+							:showStatus="supportWindow",
+							@close="supportToggle")
+
+			notify-widget(v-if="notifyWindow",
+							:showStatus="notifyWindow",
+							@close="notifyWindowToggle")
+							

@@ -1,0 +1,145 @@
+header.header {
+	height: 60px;
+    margin-bottom: 5px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,.15);
+	
+	.navbar-brand {
+		width: 140px;
+	}
+
+	.navbar {
+		height: 100%;
+		background: $header_bg;
+	    padding: 0.5rem 1.3rem;
+	}
+
+
+	// Headet search input
+	.form-inline {
+		max-width: 800px;
+	    width: 100%;
+	    margin-bottom: 0px;
+        margin-right: 10px;
+   		margin-left: 112px;
+	    margin-top: 1px;
+
+	    @media(max-width: 1680px) and (min-width: 1421px) {
+	    	margin-left: 5rem;
+	    }
+	    @media(max-width: 1420px) {
+	    	margin-left: 2rem;
+	    }
+	}
+	
+	.case-nav{
+		width: 50%
+	}
+	.case {
+		max-width: 1080px;
+		width: calc(100% - 617px);
+	}
+
+
+	/* Navbar nav */
+	.navbar-nav {
+		.nav-item {
+
+			&.b-nav-dropdown {
+				a {
+					margin-right: 0px;
+				}
+			}
+
+			> a {
+				font-size: 0.875rem;
+				font-weight: 500;
+				cursor: pointer;
+				color: $color_g;
+				outline: none !important;
+				box-shadow: none !important;
+				position: relative;
+		        margin: 3px 12px 0px;
+
+		        &:hover {
+		        	color: $color_1;
+		        }
+
+				i {
+					margin-right: 5px;
+					position: relative;
+					top: 2px;
+
+					&.fs-18 {
+						font-size: 18px;
+					}
+					&.fs-17 {
+						font-size: 17px;
+					}
+					&.fs-16 {
+						font-size: 16px;
+					}
+					&.fs-15 {
+						font-size: 15px;
+					}
+
+					&.arrow {
+						top: 3px;
+						margin-right: 0px;
+					}
+				}
+			}
+		}
+	}
+
+	.toggle-menu {
+		background: none;
+		border:none;
+		outline: none !important;
+		box-shadow: none !important;
+		color: $color_g;
+		cursor: pointer;
+		padding: 0px;
+	    margin-left: 10px;
+
+
+		&:hover {
+			color: $color_1;
+		}
+
+		&:active {
+			background: transparent !important;
+			color: darken($color_1, 1%) !important;
+		}
+
+		i {
+			font-size: 28px;
+		}
+	}
+
+	.dropdown-menu {
+		background: darken($header_bg, 1%);
+		padding: 0px;
+	    min-width: 8rem;
+        margin-top: -5px;
+    	box-shadow: 0px 1px 12px 0px rgba(0,0,0,.12);
+
+		a {
+			border-bottom: 1px solid $color_gl;
+			font-size: 11px;
+			color: $color_g;
+		    padding: 6px;
+
+		    &:hover {
+		    	background: $color_1;
+		    	color: $white;
+		    	border-color: $color_1;
+				margin-top: -1px;
+				padding-top: 7px;
+		    }
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+}

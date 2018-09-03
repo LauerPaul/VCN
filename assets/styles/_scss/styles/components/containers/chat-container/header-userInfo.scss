@@ -1,0 +1,375 @@
+.header-chat-container {
+	background: $white;
+	height: 125px;
+	padding: 8px 4px;
+	@include border-radius(4px 4px 0 0);
+	border-bottom: 1px solid $color_gl;
+
+	.avatar-case {
+		position: relative;
+		@include border-radius(4px);
+		overflow: hidden;
+		margin: 0 8px 0 4px;
+		width: 108px;
+		
+		.user-avatar {
+			@include border-radius(4px);
+			overflow: hidden;
+
+			&:not(.small) {
+				height: 108px;
+				width: 108px;
+			}
+
+			&.small {
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				left: 2px;
+				top: 2px;
+			}
+
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+
+		.user-video {
+			@include border-radius(4px);
+			overflow: hidden;
+
+			.play {
+				position: absolute;
+				z-index: 5;
+				top: -50%;
+				bottom: -50%;
+				left: -50%;
+				right: -50%;
+				margin: auto;
+				width: 42px;
+				height: 42px;
+				color: $white;
+				font-size: 48px;
+				cursor: pointer;
+				opacity: 0.84;
+			    line-height: 42px;
+				@include transition(all 0.4s);
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+
+		}
+	}
+
+	.info-case {
+		margin: 0 8px;
+		max-width: 165px;
+
+		.userName {
+			width: 100%;
+			font-size: 18px;
+			font-weight: 600;
+			color: #333333;
+			line-height: 18px;
+			white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    padding-bottom: 6px;
+		}
+
+		.id {
+			width: 100%;
+			font-size: 13px;
+			font-style: italic;
+			color: $color_g;
+			padding-top: 4px;
+			padding-bottom: 4px;
+		
+			.labels {
+				position: relative;
+				margin-left: 12px;
+
+				.label-new {
+					&::before {
+						content: 'NEW';
+						padding: 2px 8px 1px;
+						background: $color_1;
+						display: inline-block;
+						color: $white;
+						font-size: 10px;
+						font-weight: 500;
+						font-style: normal;
+						@include border-radius(4px);
+						line-height: 10px;
+					}
+				}
+			}
+		}
+
+		.compatibility-wrapper,
+		.rating-wrapper {
+			position: relative;
+			padding-top: 4px;
+
+			.compatibility-header,
+			.rating-header {
+				font-size: 11px;
+				font-weight: 500;
+				color: $color_g;
+				line-height: 12px;
+				cursor: default;
+
+				.value {
+					font-size: 12px;
+					line-height: 13px;
+				}
+			}
+
+			.compatibility-line,
+			.rating-line {
+				background: #ebebeb;
+				@include border-radius(4px);
+				height: 5px;
+				position: relative;
+				overflow: hidden;
+				margin-top: 2px;
+				margin-bottom: 2px;
+
+				.compatibility-progress,
+				.rating-progress {
+					position: absolute;
+					@include border-radius(4px);
+					left: 0;
+					top: 0;
+					bottom: 0;
+					background: $color_1;
+					@include transition(width 0.4s);
+				}
+			}
+		}
+	}
+
+	.control-case {
+		margin: 0 4px 0 8px;
+		width: calc(100% - 108px -165px);
+		
+		.status {
+			font-size: 14px;
+			color: $color_g;
+			margin-bottom: 6px;
+			white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    cursor: default;
+		}
+
+		.action-line {
+
+			.notification {
+				font-size: 10px;
+				color: $color_g;
+				border: 1px solid $color_1;
+				@include border-radius(50%);
+				padding: 1px 2px;
+				margin-right: 8px;
+				cursor: pointer;
+				background: $white;
+
+				&:hover {
+					background: $color_1;
+					color: $white;
+				}
+			}
+
+			.action-btn {
+				color: lighten($color_g, 20%);
+				cursor: pointer;
+				@include transition(all 0.2s);
+				margin: 0px 8px;
+				font-size: 21px;
+				line-height: 19px;
+
+				&:hover {
+					color: $color_1;
+				}
+
+				&.message,
+				&.like {
+					font-size: 18px;
+				}
+
+				&.contacts,
+				&.info {
+					font-size: 20px;
+				}
+			}
+		}
+
+		.webcam-line {
+			margin-top: 4px;
+
+			.webcam-status {
+				font-size: 11px;
+				color: $color_g;
+				font-weight: 500;
+				cursor: default;
+
+				.icon {
+					color: lighten($color_g, 20%);
+					font-size: 18px;
+					margin-right: 2px;
+				}
+
+				.status {
+					font-weight: 600;
+				}
+			}
+		}
+
+		.webcam-toggle {
+			display: inline-block;
+			font-size: 10px;
+			color: white;
+			background: #b3b3b3;
+			border-radius: 4px;
+			cursor: pointer;
+			border: none;
+			height: 21px;
+			margin-bottom: 0px;
+			padding: 3px 8px 4px;
+			line-height: 12px;
+			margin-left: 8px;
+			position: relative;
+			top: -1px;
+
+			&:hover {
+				background: $color_1;
+			}
+
+			.icon {
+				margin-left: 8px;
+				font-size: 16px;
+				line-height: 10px;
+				position: relative;
+				top: 2px;
+			}
+		}
+
+		.action-line-second {
+		    margin-top: 4px;
+
+			.toFavorite {
+
+				&.show {
+			    	button {
+						color: $color_g;
+					}
+				}
+
+			    button:not(.dropdown-item) {
+					font-size: 12px;
+				    color: #999999;
+				    font-weight: 500;
+				    cursor: pointer;
+				    @include transition(all 0.4s);
+				    padding: 0px;
+				    background: transparent !important;
+				    border: none !important;
+			        line-height: 12px;
+			        margin-right: 16px;
+	
+				    .icon {
+				        line-height: 12px;
+				    	font-size: 18px;
+				    	margin-right: 2px;
+				    }
+			    }
+
+
+			    &:hover {
+			    	color: $color_g;
+			    }
+
+			    .dropdown-menu {
+			    	min-width: 240px;
+			    	padding: 0px;
+			    	 @include border-radius(0px);
+
+			    	.dropdown-item {
+			    		border-bottom: 1px solid #c1c1c1;
+			    		font-size: 12px;
+			    		position: relative;
+				        line-height: 12px;
+				    	color: $color_g;
+				    	padding-left: 10px;
+				    	padding-right: 8px;
+				    	padding-top: 6px;
+				    	padding-bottom: 6px;
+
+			    		&:last-child {
+			    			border: none;
+			    		}
+
+			    		&:not(.disabled):hover {
+					    	border-color: $color_1;
+			    			background: $color_1;
+					    	color: $white;
+					    }
+
+			    		&.disabled:hover {
+			    			cursor: default;
+			    		}
+
+			    		&.title {
+			    			font-weight: 500;
+			    			padding-left: 6px;
+			    			padding-right: 6px;
+			    			font-size: 13px;
+
+			    			.addNew {
+			    				cursor: pointer;
+			    				font-size: 12px;
+
+			    				.icon {
+			    					margin-right: 2px;
+			    				}
+			    				
+			    				&:hover {
+			    					color: $color_1;
+			    				}
+			    			}
+			    		}
+			    	}
+			    }
+			}
+
+			.notes {
+				font-size: 12px;
+			    color: #999999;
+			    font-weight: 500;
+			    cursor: pointer;
+			    @include transition(all 0.4s);
+			    padding: 0px;
+			    background: transparent !important;
+			    border: none !important;
+		        line-height: 12px;
+		        margin-right: 16px;
+
+			    .icon {
+			        line-height: 12px;
+			    	font-size: 18px;
+			    	margin-right: 2px;
+			    	position: relative;
+			    	top: 1px;
+			    }
+
+			    &:hover {
+			    	color: $color_g;
+			    }
+			}
+		}
+	}
+}

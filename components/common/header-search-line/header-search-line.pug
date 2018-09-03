@@ -1,0 +1,11 @@
+//- header-search-line.pug
+b-nav-form
+	.d-flex.searchLine
+		b-input-group.header-search-wrapper
+			b-form-input.header-search(type="text", :placeholder="placeholder")
+			b-input-group-append
+				b-btn(size="sm", type="submit")
+					i.mdi.mdi-magnify.mdi-rotate-90
+		
+		b-btn(size="sm", type="button", v-if="voice").voice
+			i.mdi.mdi-microphone

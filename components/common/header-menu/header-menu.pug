@@ -1,0 +1,23 @@
+b-navbar-nav
+	
+	template(v-for="item in menu")
+		//- item.title - item title text --> text
+		//- item.icon - item icon class (mdi) --> text
+		//- item.sub_menu - item sub menu --> object/false
+		//- item.link - item link --> text/false
+		//- item.route_name - item route name --> text/false
+		//- item.counter - item counter label --> count/false
+		//- item.label_new - item label new --> true/false
+		
+		b-nav-item-dropdown(v-if="item.sub_menu", :key="item.index", no-caret)
+			template(slot="button-content")
+				i(:class="item.icon")
+				span {{ item.title }}
+				i.mdi.mdi-menu-down.arrow
+			b-dropdown-item(v-for="subItem in item.sub_menu", :to="(subItem.route_name ? { name: subItem.route_name } : subItem.link)", :key="subItem.index") {{ subItem.title }}
+
+		b-nav-item(v-else, :to="(item.route_name ? { name: item.route_name } : item.link)")
+			i(:class="item.icon")
+			span.relative {{ item.title }}
+				span.label-item(v-if="item.counter") {{ item.counter }}
+				span.label-item.secondary(v-if="item.label_new") NEW

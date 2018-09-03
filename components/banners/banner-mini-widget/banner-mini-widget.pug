@@ -1,0 +1,12 @@
+//- Template (mixin)
+mixin bannerFC()
+	.d-flex.align-items-center.justify-content-center.wrapper
+		img(v-if="image", :src="image", :alt="imageAlt", :class="specialClassImage ? specialClassImage : ''")
+		span.text(v-if="text", :class="specialClassText ? specialClassText : ''") {{ text }}
+
+//- Wrapper
+.banner-fc-wrapper(v-if="image")
+	router-link(v-if="routeName || link", :target="targetBlank ? '_blank' : '_self'", :to="(routeName && routeName !== '' ? { name: routeName } : link)")
+		+bannerFC()
+	.banner-wrapper-second(v-else)
+		+bannerFC()

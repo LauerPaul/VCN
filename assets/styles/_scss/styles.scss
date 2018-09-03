@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&subset=cyrillic');
+// font-family: 'Roboto', sans-serif;
+/* ------------- INCLUDES -------------- */
+
+// Mixins
+@import "./mixins/mixins.scss";
+
+// Variables
+@import "./variables/variables.scss";
+
+/* Bootstrap */
+@import "./includes/bootstrap/scss/bootstrap.scss";
+@import "./includes/bootstrap/bootstrap-vue.scss";
+
+/* Slick */
+@import "./includes/slick/slick.scss";
+@import "./includes/slick/slick-theme.scss";
+
+/* Scroll */
+@import "./includes/scroll/perfect-scrollbar.scss";
+
+/* Fonts */
+@import "./fonts/fonts.scss";
+
+/* Theme */
+@import "./styles/theme.scss";
+/* Common */
+@import "./styles/common/common.scss";
+/* Components */
+@import "./styles/components/components.scss";

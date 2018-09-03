@@ -1,0 +1,22 @@
+b-form(@submit.prevent="sendMessage", style="margin: 0px;")
+	.chat-footer-case.d-flex.align-items-center
+
+		.webcam-wrapper
+
+			.webcam-off(v-if="!$auth.user.webcamActive")
+				span(v-html="text.infoText")
+				button(type="button", @click.prevent="webcamToggle") {{ text.turn_on }}
+
+			.webcam-on(v-else)
+				button(type="button", @click.prevent="webcamToggle") {{ text.turn_off }}
+
+
+		.text-message-wrapper
+			b-form-textarea(v-model="message", :placeholder="placeholder", no-resize)
+
+		.last-wrapper
+			span.attach(@click.prevent="attachImage")
+				i.mdi.mdi-image.icon
+				span {{ text.attach_file }}
+
+			b-button(type="submit", variant="secondary").send {{ text.send }}

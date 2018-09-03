@@ -1,0 +1,27 @@
+.app-wrapper
+	//- Header
+	header.header
+		b-navbar.justify-content-between(toggleable="md")
+			.d-flex.case
+
+				//- Site Logo
+				b-navbar-brand(
+								:to="($route.path !== '/' ? { name: 'index' } : '')",
+								:tag="($route.path === '/' ? 'span' : 'a')"
+							)
+					img(:src="logo", :alt="logo_alt")
+
+				//- Searh input
+				search-line(v-if="searchInput_status")
+			
+			.d-flex.justify-content-end.case-nav
+				//- Header menu
+				header-menu(v-if="headerMenu_status")
+
+
+				//- Button menu
+				b-button.toggle-menu(@click="asideToggle")
+					i.mdi.mdi-menu
+
+	//- App content
+	nuxt

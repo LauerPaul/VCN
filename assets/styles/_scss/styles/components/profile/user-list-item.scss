@@ -1,0 +1,380 @@
+.user-list-item {
+	position: relative;
+	padding: 8px 10px 5px;
+
+	.first-column {
+		.photo-case {
+			position: relative;
+			width: 50px;
+			height: 50px;
+			margin-right: 8px;
+			
+			.photo-wrapper {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				@include border-radius(4px);
+
+				img {
+					max-width: 100%;
+					max-height: 100%;
+				}
+			}
+
+			.new.label-new {
+				position: absolute;
+			}
+
+			.indicator-online {
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				background: #34c363;
+				border: 2px solid $white;
+				display: block;
+				top: -2px;
+				right: -2px;
+				@include border-radius(50%);
+			}
+
+			.indicator-webcam {
+				position: absolute;
+			}
+		}
+
+		.messages-case {
+			text-align: center;
+			margin-right: 8px;
+			border-right: 1px solid $color_gl;
+			margin-top: 2px;
+		    height: 18px;
+		    line-height: 18px;
+		}
+	}
+	
+	.messages-case {
+		
+		.chat {
+			color: #999999;
+			cursor: pointer;
+			font-size: 14px;
+
+			&:hover {
+				color: $color_1;
+			}
+		}
+
+		.message {
+			color: #999999;
+			cursor: pointer;
+			font-size: 15px;
+
+			&:hover {
+				color: $color_1;
+			}
+		}
+
+		.wink, .like, .help {
+			color: #999999;
+			cursor: pointer;
+			font-size: 15px;
+			
+			&:hover {
+				color: $color_1;
+			}
+		}
+			
+		.margin-l {
+			margin-right: 6px;
+		}
+	}
+
+	.second-column {
+   		width: calc(100% - 58px);
+   		height: 50px;
+
+   		&.active-chat {
+   			height: 70px;
+   			position: relative;
+   			top: -2px;
+
+			.close {
+				right: -8px;
+				top: -4px;
+			}
+   		}
+		
+		.close {
+			display: none;
+			font-size: 14px;
+			cursor: pointer;
+			position: absolute;
+			right: 3px;
+			top: 4px;
+		}
+
+		.name {
+			font-size: 13px;
+			font-weight: 500;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			color: $color_g;
+			line-height: 13px;
+			margin-bottom: 4px;
+			cursor: default;
+		}
+
+		.status {
+			font-size: 12px;
+			color: $color_g;
+			line-height: 12px;
+			cursor: default;
+		}
+
+		.webcam-chat {
+			font-size: 10px;
+			color: $color_g;
+			cursor: default;
+			margin-top: 8px;
+
+			.webcam-toggle {
+				height: 14px;
+				padding: 0px 4px;
+				line-height: 11px;
+				font-size: 10px;
+				@include border-radius(4px);
+				border: none;
+				background: $color_g;
+				color: $white;
+				cursor: pointer;
+				@include transition(all 0.2s);
+
+				.time {
+					line-height: 12px;
+					font-size: 10px;
+					margin-right: 6px;
+				}
+
+				&:hover {
+					background: $color_1;
+				}
+			}
+		}
+
+		.text-chat {
+			font-size: 10px;
+			color: $color_g;
+			cursor: default;
+			margin-top: 4px;
+
+			.chat-toggle {
+				height: 14px;
+				padding: 0px 4px;
+				line-height: 11px;
+				font-size: 10px;
+				@include border-radius(4px);
+				border: none;
+				background: $color_g;
+				color: $white;
+				cursor: pointer;
+				@include transition(all 0.2s);
+
+				.time {
+					line-height: 12px;
+					font-size: 10px;
+					margin-right: 6px;
+				}
+
+				&:hover {
+					background: $color_1;
+				}
+			}
+		}
+	}
+
+	&:hover {
+		background: #f2f2f2;
+
+		.second-column {
+			.close {
+				display: block;
+			}
+		}
+
+		.indicator-webcam {
+			background: $color_1;
+			color: $white;
+
+			&.active {
+				background: #f2f2f2;
+				color: $color_1;
+			}
+		}
+	}
+
+
+	&.open-window {
+		background: #58bbb6;
+		color: $white;
+
+		.first-column {
+			.photo-case {
+				.indicator-online {
+					background: $white;
+					width: 14px;
+					height: 14px;
+					top: -4px;
+					right: -6px;
+					border: 3px solid $color_1;
+				}
+
+				.indicator-webcam {
+
+					&.active {
+						background: $white;
+					}
+				}
+			}
+
+			.messages-case {
+				border-color: #9bd6d3;
+				
+				.chat,
+				.message {
+					color: #eff8f8;
+
+					&:hover {
+						color: $white;
+					}
+				}
+			}
+		}
+
+		.second-column {
+
+			.close {
+				color: $white;
+			}
+
+			.name {
+				color: $white;
+			}
+
+			.status {
+				color: $white;
+				opacity: 0.9;
+			}
+
+			.webcam-chat {
+				color: $white;
+				
+				.webcam-toggle {
+					background: #bee1e0;
+					color: $color_1;
+
+					&:hover {
+						background: $white;
+					}
+				}
+			}
+			.text-chat {
+				color: $white;
+
+				.chat-toggle {
+					background: #bee1e0;
+					color: $color_1;
+
+					&:hover {
+						background: $white;
+					}
+				}
+			}
+		}
+	}
+
+	&.chatInvite {
+
+		.first-column {
+			height: 110px;
+
+			.statistics {
+				margin-right: 8px;
+				margin-top: 4px;
+
+				i.mdi {
+					font-size: 11px;
+					line-height: 13px;
+					color: $color_g;
+				}
+
+				i.mdi.mdi-account-plus {
+					font-size: 12px;
+					line-height: 13px;
+				}
+
+				.procent {
+					font-size: 11px;
+					line-height: 13px;
+					font-weight: 500;
+					color: $color_g;
+				}
+
+				.progress-bar {
+					background: #ebebeb;
+					border-radius: 4px;
+					height: 3px;
+					position: relative;
+					overflow: hidden;
+					margin-top: 2px;
+					margin-bottom: 2px;
+
+					.line {
+						position: absolute;
+						border-radius: 4px;
+						left: 0;
+						top: 0;
+						bottom: 0;
+						background: #58bbb6;
+						-webkit-transition: width 0.4s;
+						transition: width 0.4s;
+					}
+				}
+			}
+		}
+
+		.second-column {
+			height: 110px;
+		    margin-top: 4px;
+
+			.chat-message-wrapper {
+				
+				.chat-message {
+					font-size: 11px;
+					max-height: 30px;
+					line-height: 13px;
+					font-weight: 500;
+					overflow: hidden;
+				    text-overflow: ellipsis;
+				    display: -webkit-box;
+				    -webkit-line-clamp: 2;
+				    -webkit-box-orient: vertical;
+				    padding: 1px 4px 2px;
+					border: 1px solid $color_1;
+					@include border-radius(2px);
+					margin-bottom: 5px;
+					cursor: default;
+				}
+
+				.read {
+					height: 17px;
+					width: 100%;
+					font-size: 10px;
+					line-height: 10px;
+					font-weight: 500;
+				    padding: 3px;
+				}
+			}
+		}
+	}
+}

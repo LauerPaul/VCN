@@ -1,0 +1,32 @@
+.system-info-window(v-if="show")
+	.header-wrapper
+		.title {{ text.title }}
+		span.close-btn(@click="closeWindow")
+			i.mdi.mdi-close
+	//- New ticket
+	b-form(@submit="onSubmit", @reset="onReset")(v-if="new_ticket")
+		.content-wrapper
+				b-form-input(type="text",  required, :placeholder="text.subject_placeholder", v-model="subject")
+				b-form-textarea(required, :placeholder="text.message_placeholder", :rows="5", no-resize, v-model="message")
+		.footer-wrapper
+			b-button.float-right.mini(type="submit", variant="secondary") {{ text.send }}
+			b-button.float-right.mini.cancel(type="reset", variant="light", :disabled="!cancel") {{ text.cancel }}
+			.clearfix
+	
+	//- Chat
+	.chat-window-widget(v-if="!new_ticket")
+		#content-wrapper(@wheel.prevent="scrollBarWheel", rel="scrollcase")
+			span.message(v-for="{user_id, text, date, reade} in chat",
+						:key="date",
+						:class="(user_id == $auth.user.id ? 'mess-my' : 'mess-me')") {{ text }}
+					
+		b-form(@submit="onSubmitChat", @reset="onReset")
+			.footer-wrapper
+				b-form-input(type="text",  required, :placeholder="text.message_placeholder", v-model="chatMessage")
+
+				b-button.mini.new-ticket(type="button", variant="light", @click="CreateNewTicket") {{ text.new_ticket }}
+				
+				b-button.float-right.mini(type="submit", variant="secondary") {{ text.send }}
+				b-button.float-right.mini.cancel(type="reset", variant="light", :disabled="!cancel") {{ text.cancel }}
+				.clearfix
+

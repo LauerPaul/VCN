@@ -1,0 +1,14 @@
+.content-wrapper
+	
+	//- BANNER TOP FULL WIDTH
+	banner-full-width(v-if="bannerTop && bannerTop.status", :options="bannerTop.params")
+
+	.content-second-wrapper
+		//- CASE 1 User info container
+		case_1(v-if="case_1 && case_1.status", :options="case_1.params")
+		//- CASE 2
+		case_2(v-if="case_2 && case_2.status", :options="case_2.params")
+		//- CASE 3 chat container
+		case_3(v-if="case_3 && case_3.status", :options="case_3.params")
+
+		.clearfix

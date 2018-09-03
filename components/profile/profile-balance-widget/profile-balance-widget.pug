@@ -1,0 +1,32 @@
+.my-balance-module
+	.header-line.d-flex.align-items-center.justify-content-between
+		.current-balance {{ text.balance_prefix }}{{ userBalance }}{{ text.balance_postfix }}
+
+		//- Widget Buy Credits
+		.right-column
+			buyCredits-dropdown-Widget(v-if="buyCredits_dropdown_status !== false")
+			a.quickPayment(href="#") {{ text.quickPayment_prefix }}{{ lastPayment }}{{ text.quickPayment_postfix }}
+
+	//- Slider
+	div.history-carousel.d-flex.align-items-center(v-swiper:mySwiper="swiperOption")
+		.btn-slider.prev-btn-slider.d-flex.align-items-center.justify-content-center(slot="button-prev")
+			i.mdi.mdi-chevron-left
+
+		.swiper-wrapper
+
+			.swiper-slide.item-history-carousel(v-for="{title, icon, price, date} in paymentHistory", :key="date")
+				.d-flex
+					.icon-item
+						i(:class="icon")
+					.width-100
+						.title-item {{ title }}
+						.footer-item.d-flex.align-items-center.justify-content-between
+							.balance {{ text.balance_prefix_history }}{{ price }}{{ text.balance_postfix_history }}
+							.date {{ date }}
+
+		.btn-slider.next-btn-slider.d-flex.align-items-center.justify-content-center(slot="button-next")
+			i.mdi.mdi-chevron-right
+
+
+	a.footer-link(href="#")
+		span {{ text.openHistory_text }}

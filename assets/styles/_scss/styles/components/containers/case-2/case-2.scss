@@ -1,0 +1,23 @@
+.case-2-wrapper {
+	padding: 5px;
+	width: 780px;
+    max-height: 100%;
+    float: left;
+    height: 100%;
+	
+	.wrapper-case {
+		width: 100%;
+		border: 1px solid $color_gl;
+	    box-shadow: 1px 0px 2px 0px rgba(0,0,0,.12);
+		@include border-radius(4px);
+		background: white;
+		max-height: 100%;
+	    height: inherit;
+	}
+
+	#case-2-scroll-wrapper {
+	    border-top: 1px solid #CDCDCD;
+		max-height: calc(100% - 135px);
+		@include transition(all 0.4s);
+	}
+}

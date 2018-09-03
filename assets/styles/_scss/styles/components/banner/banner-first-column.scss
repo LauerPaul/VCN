@@ -1,0 +1,47 @@
+.banner-fc-wrapper {
+    border-top: 1px solid #CDCDCD;
+	text-align: center;
+	padding: 8px;
+	
+	.wrapper {
+		width: 100%;
+		height: 100%;
+	}
+	
+	.banner-wrapper-second,
+	a {
+		height: 82px;
+	    background: $color_gl;
+		text-decoration: none;
+		outline: none !important;
+		color: $white;
+		font-size: 12px;
+		font-weight: 600;
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		@include border-radius(4px);
+
+		img {
+			position: absolute;
+			max-width: 100%;
+			width: 100%;
+			max-height: 100%;
+			left: -50%;
+			right: -50%;
+			margin: auto;
+			z-index: 0;
+		}
+
+		.text {
+			position: relative;
+			z-index: 1;
+			cursor: default;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

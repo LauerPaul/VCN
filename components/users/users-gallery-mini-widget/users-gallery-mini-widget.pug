@@ -1,0 +1,22 @@
+//- users-gallery-mini-widget
+.usersListMin-widget-wrapper(v-if="users")
+	.info-text(v-if="info_status") {{ text.infoText }}
+		b-btn#girlListInfo.ratingInfo(variant="link")
+			i.mdi.mdi-help-circle
+		b-popover(target="girlListInfo", :title="text.popoverTitle", :content="text.popoverText", triggers="hover focus", placement="bottom")
+
+	//- Swiper
+	.gallery-users-mini(v-swiper:mySwiper="swiperOption")
+		.btn-slider.prev-btn-slider.d-flex.align-items-center.justify-content-center(slot="button-prev")
+			i.mdi.mdi-chevron-left
+		
+		.swiper-wrapper
+			a.swiper-slide.gallery-users-mini-slide(href="#",
+													v-for="user in users")
+				.swiper-lazy.img(:data-background="user.img", :title="user.name", :class="{new: user.new}")
+					.swiper-lazy-preloader
+				.suitable {{ text.suitableText }}
+					span {{ user.suitable }}%
+
+		.btn-slider.next-btn-slider.d-flex.align-items-center.justify-content-center(slot="button-next")
+			i.mdi.mdi-chevron-right

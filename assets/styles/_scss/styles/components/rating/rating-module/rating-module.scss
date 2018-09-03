@@ -1,0 +1,179 @@
+.rating-module-wrapper {
+	padding: 8px;
+	font-size: 11px;
+	line-height: 13px;
+	color: $color_g;
+	font-weight: 500;
+
+    .title-module {
+        font-size: 11px;
+        font-weight: 500;
+        color: $color_g;
+    	line-height: 11px;
+    	padding-bottom: 8px;
+    	border-bottom: 1px solid #cccccc;
+    	cursor: default;
+    }
+
+    .ratingInfo {
+    	padding: 0px;
+    	border: none;
+    	font-size: 14px;
+    	line-height: 10px;
+    	margin-left: 6px;
+    	color: #999999;
+    	position: relative;
+    	top: -1px;
+    }
+
+	.rating-status-wrapper {
+		padding: 8px 0;
+		border-bottom: 1px solid #cccccc;
+		
+		.title {
+			font-size: 11px;
+			font-weight: 500;
+			color: $color_g;
+			line-height: 12px;
+			cursor: default;
+		}
+
+		.progress-line-wrapper {
+			background: #ebebeb;
+			@include border-radius(4px);
+			height: 5px;
+			position: relative;
+			overflow: hidden;
+			margin-top: 4px;
+
+			.progress-indicator {
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				background: $color_1;
+				@include transition(width 0.4s);
+			}
+		}
+	}
+
+	.info-case {
+		border-bottom: 1px solid #cccccc;
+		padding: 8px 0;
+		font-size: 11px;
+		line-height: 13px;
+		color: $color_g;
+		font-weight: 500;
+		cursor: default;
+
+		.ratingInfo {
+			margin-left: 3px;
+		}
+	}
+
+	.questions-wrapper {
+		font-size: 11px;
+		line-height: 13px;
+		color: $color_g;
+		font-weight: 500;
+		padding: 8px 0;
+		cursor: default;
+
+		.header-line {
+			padding-bottom: 8px;
+
+			span {
+				margin-right: 4px;
+				display: inline-block;
+
+				&.girl-img {
+					cursor: pointer;
+					@include transition(all 0.24s);
+
+					&:hover {
+						@include transform(scale(0.9));
+					}
+				}
+			}
+		}
+
+		.question {
+			color: #333333;
+			font-size: 13px;
+			padding-bottom: 6px;
+			cursor: default;
+		}
+
+		.answer-variables {
+			border-left: 1px solid #e6e6e6;
+			border-right: 1px solid #e6e6e6;
+			border-bottom: 1px solid #e6e6e6;
+			background: #f7f7f7;
+			@include border-radius(0px);
+
+			.item {
+				border-top: 1px solid #e6e6e6;
+				padding: 3px 20px 2px 2px;
+				line-height: 14px;
+				position: relative;
+				cursor: pointer;
+				@include transition(all 0.24s);
+
+				&:hover {
+					background: $color_1;
+					color: $white;
+					border-color: darken($color_1, 5%);
+				}
+
+				&.selected {
+					border-color: darken($color_1, 5%);
+					background: $color_1;
+					color: $white;
+				}
+
+				i.icon {
+					font-size: 14px;
+					height: 14px;
+					top: -51%;
+					bottom: -50%;
+					margin: auto;
+					position: absolute;
+					right: 3px;
+				}
+			}
+		}
+
+		.plus-info {
+			margin-top: 8px;
+			margin-bottom: 8px;
+			font-size: 11px;
+			line-height: 13px;
+			color: $color_g;
+			font-weight: 500;
+			cursor: default;
+		}
+
+		.footer-rating-module {
+			padding-top: 8px;
+
+			.go-to-edit-profile {
+				cursor: pointer;
+				text-decoration: underline;
+				font-weight: normal;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+			.next-question {
+				cursor: pointer;
+				font-weight: normal;
+
+				&:hover {
+					color: $color_1;
+				}
+			}
+		}
+	}
+}

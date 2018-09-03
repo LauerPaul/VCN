@@ -1,0 +1,48 @@
+.chat-messages-wrapper {
+	height: calc(100% - 219px);
+	padding: 40px 0px;
+	overflow: hidden;
+
+	.message {
+		font-size: 13px;
+		line-height: 16px;
+		padding-left: 8px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-right: 42px;
+		position: relative;
+		box-shadow: 1px 0px 2px 0px rgba(0, 0, 0, 0.12);
+		margin-bottom: 10px;
+		clear: both;
+		max-width: calc(100% - 40px);
+
+		&.mess-me {
+			background: $white;
+			color: $color_g;
+			float: left;
+			@include border-radius(0px 4px 4px 0px);
+			
+			.time {
+				opacity: 0.5;
+			}
+		}
+
+		&.mess-my {
+			background: #9ab5c3;
+			color: $white;
+			float: right;
+			@include border-radius(4px 0px 0px 4px);
+			
+			.time {
+				opacity: 0.9;
+			}
+		}
+
+		.time {
+			position: absolute;
+			bottom: 4px;
+			right: 8px;
+			font-size: 11px;
+		}
+	}
+}

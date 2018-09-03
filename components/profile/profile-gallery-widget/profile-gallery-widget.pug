@@ -1,0 +1,6 @@
+.my-gallery-wrapper
+	ul.gallery-preview-list.d-flex.align-items-center
+		li(v-for="item in photo")
+			img(v-lazy="item.mini", :alt="item.description")
+		li.add-new-photo(v-if="add_new_status !== false", @click="addPhoto")
+			i.mdi.mdi-plus

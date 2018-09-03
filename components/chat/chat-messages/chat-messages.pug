@@ -1,0 +1,12 @@
+.chat-messages-wrapper(:id="scroll.scrollWrapperId")
+	.scrollCase
+		
+		.message(v-if="chatHistory",
+				v-for="{mess, id, time} in chatHistory",
+				:key="time",
+				:class="(id == userId ? 'mess-me' : 'mess-my')")
+			|{{ mess }}
+			
+			span.time {{ time }}
+		
+		.clearfix

@@ -1,0 +1,16 @@
+b-dropdown.toFavorite(no-caret)
+
+	template(slot="button-content")
+		i.mdi.mdi-account-plus.icon
+		|{{ text.addList }}
+
+	b-dropdown-item.title(href="#", disabled)
+		|{{ text.addList }}
+		span.addNew.float-right(@click.event="newList")
+			i.mdi.mdi-plus-circle-outline.icon
+			|{{ text.addNewList }}
+		.clearfix
+			
+	b-dropdown-item-button(v-for="({name, id}, index) in $auth.user.usersLists",
+							:key="id",
+							@click.event="toList(index)") {{ name }}

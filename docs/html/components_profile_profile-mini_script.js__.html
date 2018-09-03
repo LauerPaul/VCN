@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>DocStrap Source: components/profile/profile-mini/script.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.paper.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">DocStrap</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-@_store_chat-%25E2%25AD%2590Store-chat%25E2%2596%25B8state.html">@/store/chat~⭐Store-chat▸state</a></li><li><a href="module-@_store_site-%25E2%25AD%2590Store-site%25E2%2596%25B8state.html">@/store/site~⭐Store-site▸state</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-@_components_auth.html">@/components/auth</a></li><li><a href="module-@_components_balance_buyCredits-dropdown-widget.html">@/components/balance/buyCredits-dropdown-widget</a></li><li><a href="module-@_components_banners_banner-full-width.html">@/components/banners/banner-full-width</a></li><li><a href="module-@_components_banners_banner-mini-widget.html">@/components/banners/banner-mini-widget</a></li><li><a href="module-@_components_cases_case-1.html">@/components/cases/case-1</a></li><li><a href="module-@_components_cases_case-2.html">@/components/cases/case-2</a></li><li><a href="module-@_components_cases_case-3.html">@/components/cases/case-3</a></li><li><a href="module-@_components_chat_chat-footer.html">@/components/chat/chat-footer</a></li><li><a href="module-@_components_chat_chat-header.html">@/components/chat/chat-header</a></li><li><a href="module-@_components_chat_chat-messages.html">@/components/chat/chat-messages</a></li><li><a href="module-@_components_common_header-menu.html">@/components/common/header-menu</a></li><li><a href="module-@_components_common_header-search-line.html">@/components/common/header-search-line</a></li><li><a href="module-@_components_profile_profile-balance-widget.html">@/components/profile/profile-balance-widget</a></li><li><a href="module-@_components_profile_profile-gallery-widget.html">@/components/profile/profile-gallery-widget</a></li><li><a href="module-@_components_profile_profile-mini.html">@/components/profile/profile-mini</a></li><li><a href="module-@_components_profile_profile-notify-widget.html">@/components/profile/profile-notify-widget</a></li><li><a href="module-@_components_profile_profile-rating-widget.html">@/components/profile/profile-rating-widget</a></li><li><a href="module-@_components_profile_profile-support-widget.html">@/components/profile/profile-support-widget</a></li><li><a href="module-@_components_profile_profile-system-line-widget.html">@/components/profile/profile-system-line-widget</a></li><li><a href="module-@_components_users_users-addToList-widget.html">@/components/users/users-addToList-widget</a></li><li><a href="module-@_components_users_users-gallery-mini-widget.html">@/components/users/users-gallery-mini-widget</a></li><li><a href="module-@_layouts_default.html">@/layouts/default</a></li><li><a href="module-@_pages_index.html">@/pages/index</a></li><li><a href="module-@_pages_logout.html">@/pages/logout</a></li><li><a href="module-@_store_chat.html">@/store/chat</a></li><li><a href="module-@_store_site.html">@/store/site</a></li><li><a href="module-Plugin_log.html">Plugin_log</a></li><li><a href="module-Plugin_swiper.html">Plugin_swiper</a></li><li><a href="module-%25E2%25AD%2590Store.html">⭐Store</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-@_components_auth.html#~event:COMPONENT%253Cstrong%253EAuth%253C/strong%253Ecomputed">@/components/auth~event:COMPONENT <strong>Auth</strong> computed</a></li><li><a href="module-@_components_auth.html#~event:COMPONENT%253Cstrong%253EAuth%253C/strong%253Emounted">@/components/auth~event:COMPONENT <strong>Auth</strong> mounted</a></li><li><a href="module-@_components_balance_buyCredits-dropdown-widget.html#~event:COMPONENT%253Cstrong%253EBuyCredits-dropdown-widget%253C/strong%253Emounted">@/components/balance/buyCredits-dropdown-widget~event:COMPONENT <strong>BuyCredits-dropdown-widget</strong> mounted</a></li><li><a href="module-@_components_banners_banner-full-width.html#~event:COMPONENT%253Cstrong%253EBanner-full-width%253C/strong%253Emounted">@/components/banners/banner-full-width~event:COMPONENT <strong>Banner-full-width</strong> mounted</a></li><li><a href="module-@_components_banners_banner-mini-widget.html#~event:COMPONENT%253Cstrong%253EBanner-mini-widget%253C/strong%253Emounted">@/components/banners/banner-mini-widget~event:COMPONENT <strong>Banner-mini-widget</strong> mounted</a></li><li><a href="module-@_components_cases_case-1.html#~event:COMPONENT%253Cstrong%253ECase-1%253C/strong%253Emounted">@/components/cases/case-1~event:COMPONENT <strong>Case-1</strong> mounted</a></li><li><a href="module-@_components_cases_case-3.html#~event:COMPONENT%253Cstrong%253ECase-3(chatcontainer)%253C/strong%253Emounted">@/components/cases/case-3~event:COMPONENT <strong>Case-3 (chat container)</strong> mounted</a></li><li><a href="module-@_components_common_header-menu.html#~event:COMPONENT%253Cstrong%253EHeader-menu%253C/strong%253Emounted">@/components/common/header-menu~event:COMPONENT <strong>Header-menu</strong> mounted</a></li><li><a href="module-@_components_common_header-search-line.html#~event:COMPONENT%253Cstrong%253EHeader-search-line%253C/strong%253Emounted">@/components/common/header-search-line~event:COMPONENT <strong>Header-search-line</strong> mounted</a></li><li><a href="module-@_components_profile_profile-balance-widget.html#~event:COMPONENT%253Cstrong%253EProfile-balance-widget%253C/strong%253Emounted">@/components/profile/profile-balance-widget~event:COMPONENT <strong>Profile-balance-widget</strong> mounted</a></li><li><a href="module-@_components_profile_profile-gallery-widget.html#~event:COMPONENT%253Cstrong%253EProfile-gallery-widget%253C/strong%253Emounted">@/components/profile/profile-gallery-widget~event:COMPONENT <strong>Profile-gallery-widget</strong> mounted</a></li><li><a href="module-@_components_profile_profile-mini.html#~event:COMPONENT%253Cstrong%253EProfile-mini%253C/strong%253Emounted">@/components/profile/profile-mini~event:COMPONENT <strong>Profile-mini</strong> mounted</a></li><li><a href="module-@_components_profile_profile-notify-widget.html#~event:COMPONENT%253Cstrong%253EProfile-notify-widget%253C/strong%253Emounted">@/components/profile/profile-notify-widget~event:COMPONENT <strong>Profile-notify-widget</strong> mounted</a></li><li><a href="module-@_components_profile_profile-rating-widget.html#~event:COMPONENT%253Cstrong%253EProfile-rating-widget%253C/strong%253Emounted">@/components/profile/profile-rating-widget~event:COMPONENT <strong>Profile-rating-widget</strong> mounted</a></li><li><a href="module-@_components_profile_profile-rating-widget.html#~event:COMPONENT%253Cstrong%253EProfile-rating-widget%253C/strong%253Ewatch">@/components/profile/profile-rating-widget~event:COMPONENT <strong>Profile-rating-widget</strong> watch</a></li><li><a href="module-@_components_profile_profile-support-widget.html#~event:COMPONENT%253Cstrong%253EProfile-support-widget%253C/strong%253Emounted">@/components/profile/profile-support-widget~event:COMPONENT <strong>Profile-support-widget</strong> mounted</a></li><li><a href="module-@_components_profile_profile-system-line-widget.html#~event:COMPONENT%253Cstrong%253EProfile-system-line-widget%253C/strong%253Emounted">@/components/profile/profile-system-line-widget~event:COMPONENT <strong>Profile-system-line-widget</strong> mounted</a></li><li><a href="module-@_components_users_users-gallery-mini-widget.html#~event:COMPONENT%253Cstrong%253EUsers-gallery-mini-widget%253C/strong%253Emounted">@/components/users/users-gallery-mini-widget~event:COMPONENT <strong>Users-gallery-mini-widget</strong> mounted</a></li><li><a href="module-@_layouts_default.html#~event:LAYOUT%253Cstrong%253EDefault%253C/strong%253Emounted">@/layouts/default~event:LAYOUT <strong>Default</strong> mounted</a></li><li><a href="module-@_pages_index.html#~event:PAGE%253Cstrong%253EIndex%253C/strong%253Emounted">@/pages/index~event:PAGE <strong>Index</strong> mounted</a></li><li><a href="module-@_pages_logout.html#~event:PAGE%253Cstrong%253ELogout%253C/strong%253EbeforeCreate">@/pages/logout~event:PAGE <strong>Logout</strong> beforeCreate</a></li><li><a href="module--_components_cases_case-2.html#~event:COMPONENT%253Cstrong%253ECase-2%253C/strong%253Emounted">~/components/cases/case-2~event:COMPONENT <strong>Case-2</strong> mounted</a></li><li><a href="module--_components_chat_chat-footer.html#~event:COMPONENT%253Cstrong%253EChatfooter%253C/strong%253Emounted">~/components/chat/chat-footer~event:COMPONENT <strong>Chat footer</strong> mounted</a></li><li><a href="module--_components_chat_chat-header.html#~event:COMPONENT%253Cstrong%253EChatheader(userinfo)%253C/strong%253Emounted">~/components/chat/chat-header~event:COMPONENT <strong>Chat header (user info)</strong> mounted</a></li><li><a href="module--_components_chat_chat-messages.html#~event:COMPONENT%253Cstrong%253EChatmessages%253C/strong%253Emounted">~/components/chat/chat-messages~event:COMPONENT <strong>Chat messages</strong> mounted</a></li><li><a href="module--_components_users_users-addToList-widget.html#~event:COMPONENT%253Cstrong%253EComponentUsersAddtolist%253C/strong%253Emounted">~/components/users/users-addToList-widget~event:COMPONENT <strong>Component Users Add to list</strong> mounted</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-components_auth_script.js.html">components_auth_script.js</a></li><li><a href="tutorial-components_auth_script.js_.html">components_auth_script.js_</a></li><li><a href="tutorial-components_balance_buyCredits-dropdown-widget_script.js.html">components_balance_buyCredits-dropdown-widget_script.js</a></li><li><a href="tutorial-components_balance_buyCredits-dropdown-widget_script.js_.html">components_balance_buyCredits-dropdown-widget_script.js_</a></li><li><a href="tutorial-components_banners_banner-full-width_script.js.html">components_banners_banner-full-width_script.js</a></li><li><a href="tutorial-components_banners_banner-full-width_script.js_.html">components_banners_banner-full-width_script.js_</a></li><li><a href="tutorial-components_banners_banner-mini-widget_script.js.html">components_banners_banner-mini-widget_script.js</a></li><li><a href="tutorial-components_banners_banner-mini-widget_script.js_.html">components_banners_banner-mini-widget_script.js_</a></li><li><a href="tutorial-components_cases_case-1_script.js.html">components_cases_case-1_script.js</a></li><li><a href="tutorial-components_cases_case-1_script.js_.html">components_cases_case-1_script.js_</a></li><li><a href="tutorial-components_cases_case-2_script.js.html">components_cases_case-2_script.js</a></li><li><a href="tutorial-components_cases_case-2_script.js_.html">components_cases_case-2_script.js_</a></li><li><a href="tutorial-components_cases_case-3_script.js.html">components_cases_case-3_script.js</a></li><li><a href="tutorial-components_cases_case-3_script.js_.html">components_cases_case-3_script.js_</a></li><li><a href="tutorial-components_chat_chat-footer_script.js.html">components_chat_chat-footer_script.js</a></li><li><a href="tutorial-components_chat_chat-footer_script.js_.html">components_chat_chat-footer_script.js_</a></li><li><a href="tutorial-components_chat_chat-header_script.js.html">components_chat_chat-header_script.js</a></li><li><a href="tutorial-components_chat_chat-header_script.js_.html">components_chat_chat-header_script.js_</a></li><li><a href="tutorial-components_chat_chat-messages_script.js.html">components_chat_chat-messages_script.js</a></li><li><a href="tutorial-components_chat_chat-messages_script.js_.html">components_chat_chat-messages_script.js_</a></li><li><a href="tutorial-components_common_header-menu_script.js.html">components_common_header-menu_script.js</a></li><li><a href="tutorial-components_common_header-menu_script.js_.html">components_common_header-menu_script.js_</a></li><li><a href="tutorial-components_common_header-search-line_script.js.html">components_common_header-search-line_script.js</a></li><li><a href="tutorial-components_common_header-search-line_script.js_.html">components_common_header-search-line_script.js_</a></li><li><a href="tutorial-components_profile_profile-balance-widget_script.js.html">components_profile_profile-balance-widget_script.js</a></li><li><a href="tutorial-components_profile_profile-balance-widget_script.js_.html">components_profile_profile-balance-widget_script.js_</a></li><li><a href="tutorial-components_profile_profile-gallery-widget_script.js.html">components_profile_profile-gallery-widget_script.js</a></li><li><a href="tutorial-components_profile_profile-gallery-widget_script.js_.html">components_profile_profile-gallery-widget_script.js_</a></li><li><a href="tutorial-components_profile_profile-mini_script.js.html">components_profile_profile-mini_script.js</a></li><li><a href="tutorial-components_profile_profile-mini_script.js_.html">components_profile_profile-mini_script.js_</a></li><li><a href="tutorial-components_profile_profile-notify-widget_script.js.html">components_profile_profile-notify-widget_script.js</a></li><li><a href="tutorial-components_profile_profile-notify-widget_script.js_.html">components_profile_profile-notify-widget_script.js_</a></li><li><a href="tutorial-components_profile_profile-rating-widget_script.js.html">components_profile_profile-rating-widget_script.js</a></li><li><a href="tutorial-components_profile_profile-rating-widget_script.js_.html">components_profile_profile-rating-widget_script.js_</a></li><li><a href="tutorial-components_profile_profile-support-widget_script.js.html">components_profile_profile-support-widget_script.js</a></li><li><a href="tutorial-components_profile_profile-support-widget_script.js_.html">components_profile_profile-support-widget_script.js_</a></li><li><a href="tutorial-components_profile_profile-system-line-widget_script.js.html">components_profile_profile-system-line-widget_script.js</a></li><li><a href="tutorial-components_profile_profile-system-line-widget_script.js_.html">components_profile_profile-system-line-widget_script.js_</a></li><li><a href="tutorial-components_users_users-addToList-widget_script.js.html">components_users_users-addToList-widget_script.js</a></li><li><a href="tutorial-components_users_users-addToList-widget_script.js_.html">components_users_users-addToList-widget_script.js_</a></li><li><a href="tutorial-components_users_users-gallery-mini-widget_script.js.html">components_users_users-gallery-mini-widget_script.js</a></li><li><a href="tutorial-components_users_users-gallery-mini-widget_script.js_.html">components_users_users-gallery-mini-widget_script.js_</a></li><li><a href="tutorial-index_.html">index</a></li><li><a href="tutorial-layouts_default_default.js.html">layouts_default_default.js</a></li><li><a href="tutorial-layouts_default_default.js_.html">layouts_default_default.js_</a></li><li><a href="tutorial-module-%E2%AD%90Store.html">module-%E2%AD%90Store</a></li><li><a href="tutorial-module-@_components_auth_.html">module-@_components_auth</a></li><li><a href="tutorial-module-@_components_balance_buyCredits-dropdown-widget_.html">module-@_components_balance_buyCredits-dropdown-widget</a></li><li><a href="tutorial-module-@_components_banners_banner-full-width_.html">module-@_components_banners_banner-full-width</a></li><li><a href="tutorial-module-@_components_banners_banner-mini-widget_.html">module-@_components_banners_banner-mini-widget</a></li><li><a href="tutorial-module-@_components_cases_case-1_.html">module-@_components_cases_case-1</a></li><li><a href="tutorial-module-@_components_cases_case-2_.html">module-@_components_cases_case-2</a></li><li><a href="tutorial-module-@_components_cases_case-3_.html">module-@_components_cases_case-3</a></li><li><a href="tutorial-module-@_components_chat_chat-footer_.html">module-@_components_chat_chat-footer</a></li><li><a href="tutorial-module-@_components_chat_chat-header_.html">module-@_components_chat_chat-header</a></li><li><a href="tutorial-module-@_components_chat_chat-messages_.html">module-@_components_chat_chat-messages</a></li><li><a href="tutorial-module-@_components_common_header-menu_.html">module-@_components_common_header-menu</a></li><li><a href="tutorial-module-@_components_common_header-search-line_.html">module-@_components_common_header-search-line</a></li><li><a href="tutorial-module-@_components_profile_profile-balance-widget_.html">module-@_components_profile_profile-balance-widget</a></li><li><a href="tutorial-module-@_components_profile_profile-gallery-widget_.html">module-@_components_profile_profile-gallery-widget</a></li><li><a href="tutorial-module-@_components_profile_profile-mini_.html">module-@_components_profile_profile-mini</a></li><li><a href="tutorial-module-@_components_profile_profile-notify-widget_.html">module-@_components_profile_profile-notify-widget</a></li><li><a href="tutorial-module-@_components_profile_profile-rating-widget_.html">module-@_components_profile_profile-rating-widget</a></li><li><a href="tutorial-module-@_components_profile_profile-support-widget_.html">module-@_components_profile_profile-support-widget</a></li><li><a href="tutorial-module-@_components_profile_profile-system-line-widget_.html">module-@_components_profile_profile-system-line-widget</a></li><li><a href="tutorial-module-@_components_users_users-addToList-widget_.html">module-@_components_users_users-addToList-widget</a></li><li><a href="tutorial-module-@_components_users_users-gallery-mini-widget_.html">module-@_components_users_users-gallery-mini-widget</a></li><li><a href="tutorial-module-@_layouts_default_.html">module-@_layouts_default</a></li><li><a href="tutorial-module-@_pages_index_.html">module-@_pages_index</a></li><li><a href="tutorial-module-@_pages_logout_.html">module-@_pages_logout</a></li><li><a href="tutorial-module-@_store_chat-%E2%AD%90Store-chat%E2%96%B8state.html">module-@_store_chat-%E2%AD%90Store-chat%E2%96%B8state</a></li><li><a href="tutorial-module-@_store_chat_.html">module-@_store_chat</a></li><li><a href="tutorial-module-@_store_site-%E2%AD%90Store-site%E2%96%B8state.html">module-@_store_site-%E2%AD%90Store-site%E2%96%B8state</a></li><li><a href="tutorial-module-@_store_site_.html">module-@_store_site</a></li><li><a href="tutorial-module-Plugin_log_.html">module-Plugin_log</a></li><li><a href="tutorial-module-Plugin_swiper_.html">module-Plugin_swiper</a></li><li><a href="tutorial-modules.list_.html">modules.list</a></li><li><a href="tutorial-namespaces.list_.html">namespaces.list</a></li><li><a href="tutorial-pages_index_script.js.html">pages_index_script.js</a></li><li><a href="tutorial-pages_index_script.js_.html">pages_index_script.js_</a></li><li><a href="tutorial-pages_logout_script.js.html">pages_logout_script.js</a></li><li><a href="tutorial-pages_logout_script.js_.html">pages_logout_script.js_</a></li><li><a href="tutorial-plugins_log.js.html">plugins_log.js</a></li><li><a href="tutorial-plugins_log.js_.html">plugins_log.js_</a></li><li><a href="tutorial-plugins_swiper.js.html">plugins_swiper.js</a></li><li><a href="tutorial-plugins_swiper.js_.html">plugins_swiper.js_</a></li><li><a href="tutorial-quicksearch.html">quicksearch</a></li><li><a href="tutorial-store_chat.js.html">store_chat.js</a></li><li><a href="tutorial-store_chat.js_.html">store_chat.js_</a></li><li><a href="tutorial-store_index.js.html">store_index.js</a></li><li><a href="tutorial-store_index.js_.html">store_index.js_</a></li><li><a href="tutorial-store_site.js.html">store_site.js</a></li><li><a href="tutorial-store_site.js_.html">store_site.js_</a></li><li><a href="tutorial-tutorial-components_auth_script.js.html">tutorial-components_auth_script.js</a></li><li><a href="tutorial-tutorial-components_balance_buyCredits-dropdown-widget_script.js.html">tutorial-components_balance_buyCredits-dropdown-widget_script.js</a></li><li><a href="tutorial-tutorial-components_banners_banner-full-width_script.js.html">tutorial-components_banners_banner-full-width_script.js</a></li><li><a href="tutorial-tutorial-components_banners_banner-mini-widget_script.js.html">tutorial-components_banners_banner-mini-widget_script.js</a></li><li><a href="tutorial-tutorial-components_cases_case-1_script.js.html">tutorial-components_cases_case-1_script.js</a></li><li><a href="tutorial-tutorial-components_cases_case-2_script.js.html">tutorial-components_cases_case-2_script.js</a></li><li><a href="tutorial-tutorial-components_cases_case-3_script.js.html">tutorial-components_cases_case-3_script.js</a></li><li><a href="tutorial-tutorial-components_chat_chat-footer_script.js.html">tutorial-components_chat_chat-footer_script.js</a></li><li><a href="tutorial-tutorial-components_chat_chat-header_script.js.html">tutorial-components_chat_chat-header_script.js</a></li><li><a href="tutorial-tutorial-components_chat_chat-messages_script.js.html">tutorial-components_chat_chat-messages_script.js</a></li><li><a href="tutorial-tutorial-components_common_header-menu_script.js.html">tutorial-components_common_header-menu_script.js</a></li><li><a href="tutorial-tutorial-components_common_header-search-line_script.js.html">tutorial-components_common_header-search-line_script.js</a></li><li><a href="tutorial-tutorial-components_profile_profile-balance-widget_script.js.html">tutorial-components_profile_profile-balance-widget_script.js</a></li><li><a href="tutorial-tutorial-components_profile_profile-gallery-widget_script.js.html">tutorial-components_profile_profile-gallery-widget_script.js</a></li><li><a href="tutorial-tutorial-components_profile_profile-mini_script.js.html">tutorial-components_profile_profile-mini_script.js</a></li><li><a href="tutorial-tutorial-components_profile_profile-notify-widget_script.js.html">tutorial-components_profile_profile-notify-widget_script.js</a></li><li><a href="tutorial-tutorial-components_profile_profile-rating-widget_script.js.html">tutorial-components_profile_profile-rating-widget_script.js</a></li><li><a href="tutorial-tutorial-components_profile_profile-support-widget_script.js.html">tutorial-components_profile_profile-support-widget_script.js</a></li><li><a href="tutorial-tutorial-components_profile_profile-system-line-widget_script.js.html">tutorial-components_profile_profile-system-line-widget_script.js</a></li><li><a href="tutorial-tutorial-components_users_users-addToList-widget_script.js.html">tutorial-components_users_users-addToList-widget_script.js</a></li><li><a href="tutorial-tutorial-components_users_users-gallery-mini-widget_script.js.html">tutorial-components_users_users-gallery-mini-widget_script.js</a></li><li><a href="tutorial-tutorial-index_.html">tutorial-index_</a></li><li><a href="tutorial-tutorial-layouts_default_default.js.html">tutorial-layouts_default_default.js</a></li><li><a href="tutorial-tutorial-module-%E2%AD%90Store.html">tutorial-module-%E2%AD%90Store</a></li><li><a href="tutorial-tutorial-module-@_components_auth_.html">tutorial-module-@_components_auth_</a></li><li><a href="tutorial-tutorial-module-@_components_balance_buyCredits-dropdown-widget_.html">tutorial-module-@_components_balance_buyCredits-dropdown-widget_</a></li><li><a href="tutorial-tutorial-module-@_components_banners_banner-full-width_.html">tutorial-module-@_components_banners_banner-full-width_</a></li><li><a href="tutorial-tutorial-module-@_components_banners_banner-mini-widget_.html">tutorial-module-@_components_banners_banner-mini-widget_</a></li><li><a href="tutorial-tutorial-module-@_components_cases_case-1_.html">tutorial-module-@_components_cases_case-1_</a></li><li><a href="tutorial-tutorial-module-@_components_cases_case-2_.html">tutorial-module-@_components_cases_case-2_</a></li><li><a href="tutorial-tutorial-module-@_components_cases_case-3_.html">tutorial-module-@_components_cases_case-3_</a></li><li><a href="tutorial-tutorial-module-@_components_chat_chat-footer_.html">tutorial-module-@_components_chat_chat-footer_</a></li><li><a href="tutorial-tutorial-module-@_components_chat_chat-header_.html">tutorial-module-@_components_chat_chat-header_</a></li><li><a href="tutorial-tutorial-module-@_components_chat_chat-messages_.html">tutorial-module-@_components_chat_chat-messages_</a></li><li><a href="tutorial-tutorial-module-@_components_common_header-menu_.html">tutorial-module-@_components_common_header-menu_</a></li><li><a href="tutorial-tutorial-module-@_components_common_header-search-line_.html">tutorial-module-@_components_common_header-search-line_</a></li><li><a href="tutorial-tutorial-module-@_components_profile_profile-balance-widget_.html">tutorial-module-@_components_profile_profile-balance-widget_</a></li><li><a href="tutorial-tutorial-module-@_components_profile_profile-gallery-widget_.html">tutorial-module-@_components_profile_profile-gallery-widget_</a></li><li><a href="tutorial-tutorial-module-@_components_profile_profile-mini_.html">tutorial-module-@_components_profile_profile-mini_</a></li><li><a href="tutorial-tutorial-module-@_components_profile_profile-notify-widget_.html">tutorial-module-@_components_profile_profile-notify-widget_</a></li><li><a href="tutorial-tutorial-module-@_components_profile_profile-rating-widget_.html">tutorial-module-@_components_profile_profile-rating-widget_</a></li><li><a href="tutorial-tutorial-module-@_components_profile_profile-support-widget_.html">tutorial-module-@_components_profile_profile-support-widget_</a></li><li><a href="tutorial-tutorial-module-@_components_profile_profile-system-line-widget_.html">tutorial-module-@_components_profile_profile-system-line-widget_</a></li><li><a href="tutorial-tutorial-module-@_components_users_users-addToList-widget_.html">tutorial-module-@_components_users_users-addToList-widget_</a></li><li><a href="tutorial-tutorial-module-@_components_users_users-gallery-mini-widget_.html">tutorial-module-@_components_users_users-gallery-mini-widget_</a></li><li><a href="tutorial-tutorial-module-@_layouts_default_.html">tutorial-module-@_layouts_default_</a></li><li><a href="tutorial-tutorial-module-@_pages_index_.html">tutorial-module-@_pages_index_</a></li><li><a href="tutorial-tutorial-module-@_pages_logout_.html">tutorial-module-@_pages_logout_</a></li><li><a href="tutorial-tutorial-module-@_store_chat-%E2%AD%90Store-chat%E2%96%B8state.html">tutorial-module-@_store_chat-%E2%AD%90Store-chat%E2%96%B8state</a></li><li><a href="tutorial-tutorial-module-@_store_chat_.html">tutorial-module-@_store_chat_</a></li><li><a href="tutorial-tutorial-module-@_store_site-%E2%AD%90Store-site%E2%96%B8state.html">tutorial-module-@_store_site-%E2%AD%90Store-site%E2%96%B8state</a></li><li><a href="tutorial-tutorial-module-@_store_site_.html">tutorial-module-@_store_site_</a></li><li><a href="tutorial-tutorial-module-Plugin_log_.html">tutorial-module-Plugin_log_</a></li><li><a href="tutorial-tutorial-module-Plugin_swiper_.html">tutorial-module-Plugin_swiper_</a></li><li><a href="tutorial-tutorial-modules.list_.html">tutorial-modules.list_</a></li><li><a href="tutorial-tutorial-namespaces.list_.html">tutorial-namespaces.list_</a></li><li><a href="tutorial-tutorial-pages_index_script.js.html">tutorial-pages_index_script.js</a></li><li><a href="tutorial-tutorial-pages_logout_script.js.html">tutorial-pages_logout_script.js</a></li><li><a href="tutorial-tutorial-plugins_log.js.html">tutorial-plugins_log.js</a></li><li><a href="tutorial-tutorial-plugins_swiper.js.html">tutorial-plugins_swiper.js</a></li><li><a href="tutorial-tutorial-quicksearch.html">tutorial-quicksearch</a></li><li><a href="tutorial-tutorial-store_chat.js.html">tutorial-store_chat.js</a></li><li><a href="tutorial-tutorial-store_index.js.html">tutorial-store_index.js</a></li><li><a href="tutorial-tutorial-store_site.js.html">tutorial-store_site.js</a></li><li><a href="tutorial-tutorials.list_.html">tutorials.list</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: components/profile/profile-mini/script.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">/**
+*	@version 1.0 beta
+*	@module @/components/profile/profile-mini
+*	@desc &lt;span style="color: red; font-size: 18px;">☢ Only authorized user&lt;/span>&lt;br>
+*	&lt;strong>Component Profile mini&lt;/strong> - Виджет профиля авторизованного пользователя.
+*	@see ~/components/profile/profile-mini
+*
+*	@author	Pavel Uhrynovych (front-end developer of VC)
+*	@copyright 2018©victoriyaclub.com
+*/
+
+import { focus } from 'vue-focus'
+import Gallery from '~/components/profile/profile-gallery-widget'
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!! Временные файлы для demo версии !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+import photo_array from '~/static/tmp/user/photo'
+// -------------------------------------------------------------------------------------------
+
+
+// DATA
+const data = {
+	/**
+	* @desc &lt;strong style="color:red; font-size: 18px;">ⓘ&lt;/strong>
+	*
+	* @typedef {Object} Data
+	* 	@property {boolean} editName - Режим редактирования имени
+	* 	@property {string} editNameVal - Модель. Временное хранилище введенного имени в режиме редактирования
+	*	
+	* 	@property {object} text - Text on the page
+	*	 	@property {object} text.enable_webcam - Enable webcam
+	*	 	@property {object} text.disable_webcam - Disable webcam
+	*
+	* 	@property {array} config_menu - config menu list
+	* 		@property {string} config_menu.object.title - title link
+	* 		@property {string|false} config_menu.object.link - link (if route_name - false)
+	* 		@property {string|false} config_menu.object.route_name - route name (priority over link)
+	* 		@property {string} config_menu.object.icon - icon class (css)
+	*	
+	* 	@property {object} user - user data
+	*	 	@property {string|null} user.name - current user name (reserved - will be set in &lt;strong>mounted&lt;/strong> hook)
+	*	 	@property {string|null} user.avatar - current user avatar link (reserved - will be set in &lt;strong>mounted&lt;/strong> hook)
+	*	 	@property {string|null} user.avatarAlt - current user avatar attr ALT (reserved - will be set in &lt;strong>mounted&lt;/strong> hook)
+	*	 	@property {string|null} user.status - current user status text (reserved - will be set in &lt;strong>mounted&lt;/strong> hook)
+	*	 	@property {array|false} user.photos - current user photos array (reserved - will be set in &lt;strong>mounted&lt;/strong> hook)
+	*	 	@property {boolean} user.webcam - current user WebCam availability status (reserved - will be set in &lt;strong>mounted&lt;/strong> hook)
+	*	 	@property {boolean} user.webcamActive - current user WebCam activity status (reserved - will be set in &lt;strong>mounted&lt;/strong> hook)
+	*	 	@property {int|string|false} user.webcamBrowsing - current user WebCam browsing count (reserved - will be set in &lt;strong>mounted&lt;/strong> hook)
+	* 
+	*/
+
+	editName: false,
+	editNameVal: '',
+	text: {
+		enable_webcam: 'Enable webcam',
+		disable_webcam: 'Disable webcam'
+	},
+
+	user: {
+		name: null,
+		avatar: null,
+		avatarAlt: null,
+		status: null,
+		photos: false,
+		webcam: false,
+		webcamActive: false,
+		webcamBrowsing: false
+	},
+
+	config_menu: [
+		{
+			title: 'My settings',
+			link: '#',
+			route_name: false,
+			icon: 'mdi mdi-settings'
+		},
+		{
+			title: 'Edit Profile',
+			link: '#',
+			route_name: false,
+			icon: 'mdi mdi-account'
+		},
+		{
+			title: 'My billing (finance)',
+			link: '#',
+			route_name: false,
+			icon: 'mdi mdi-database'
+		},
+		{
+			title: 'Logout',
+			link: '/logout',
+			route_name: false,
+			icon: 'mdi mdi-logout'
+		}
+	]
+}
+
+// METHODS
+const methods = {
+	/**
+	* 	@desc &lt;strong style="color:red; font-size: 18px;">ⓘ&lt;/strong> 
+	*	Назначает локальные переменные объекта user из Store -> $auth.user
+	*	@method setUserData
+	**/
+	setUserData() {
+		// Log method init
+		this.$log.debug('component \'@/components/profile/profile-mini\' -> Set object user');
+
+		this.user.name = this.$auth.user.name
+		this.user.avatarAlt = "Photo" + this.$auth.user.name
+		this.user.avatar = this.$auth.user.avatar
+		this.user.status = this.$auth.user.status_text
+		
+		this.user.webcam = this.$auth.user.webcam
+		this.user.webcamActive = this.$auth.user.webcamActive
+		this.user.webcamBrowsing = this.$auth.user.webcamBrowsing
+	},
+
+	/**
+	* 	@desc &lt;strong style="color:red; font-size: 18px;">ⓘ&lt;/strong> 
+	*	ON|OFF трансляции своей камеры
+	*	@method webcamToggle
+	**/
+	webcamToggle() {
+		if(process.browser) {
+			// Log method init
+			if(this.$auth.user.webcamActive) this.$log.debug('component \'@/components/profile/profile-mini\' -> Toggle the broadcast modes of your camera - camera OFF');
+			else this.$log.debug('component \'@/components/profile/profile-mini\' -> Toggle the broadcast modes of your camera - camera ON');
+			this.$auth.user.webcamActive = !this.$auth.user.webcamActive
+			// delete
+			this.webcamBrowsing = 2
+			// delete
+		}
+	},
+
+	/**
+	* 	@desc &lt;strong style="color:red; font-size: 18px;">ⓘ&lt;/strong> 
+	*	Функция активации режима редактирования имени
+	*	@method editNameFocus
+	**/
+	editNameFocus() {
+		if(process.browser) {
+			// If edit name
+			if(this.editName){
+				// Developer Debug
+				this.$log.debug('component \'@/components/profile/profile-mini\' -> Toggle edit name status to `false`');
+			}
+			// If edit name false
+			else{
+				// Developer Debug
+				this.$log.debug('component \'@/components/profile/profile-mini\' -> Toggle edit name status to `true`');
+			}
+
+			this.editName = !this.editName;
+		}
+	},
+
+	/**
+	* 	@desc &lt;strong style="color:red; font-size: 18px;">ⓘ&lt;/strong> 
+	*	Функция назначения горячих клавиш:&lt;br>
+	*	&lt;strong>Escape&lt;/strong> - Отмена редактирования имени&lt;br>
+	*	&lt;strong>Enter&lt;/strong>- Сохранение редактирования имени
+	*	@method onKeyUp
+	**/
+	onKeyUp() {
+		// Отмена редактирования имени
+		if(event.key === 'Escape'){
+			// Developer Debug
+			this.$log.debug('component \'@/components/profile/profile-mini\' -> Cancel name editing - \'Escape\' Key pressed');
+			
+			this.editName = false;
+		}
+		// Сохранение редактирования имени
+		else if(event.key === 'Enter'){
+			// Developer Debug
+			this.$log.debug('component \'@/components/profile/profile-mini\' -> Save name editing - \'Enter\' Key pressed');
+			
+			this.name = document.getElementById('pmi-edit-name').value
+			this.editName = false;
+		}
+    },
+
+	/**
+	* 	@desc &lt;strong style="color:red; font-size: 18px;">ⓘ&lt;/strong> 
+	*	Запрашивает массив фото пользователя для передачи в виджет
+	*	[Profile Gallery]{@link module:@/components/profile/profile-gallery-widget}
+	*	(Если переменная &lt;strong>gallery_status&lt;/strong> is &lt;strong>true&lt;/strong>)
+	*	@method getUserPhoto
+	**/
+	getUserPhoto() {
+		// Log method init
+		this.$log.debug('component \'@/components/profile/profile-mini\' -> Init method');
+
+		this.user.photos = photo_array;
+	},
+
+	/**
+	* 	@desc &lt;strong style="color:red; font-size: 18px;">ⓘ&lt;/strong> 
+	*	Функция добавления нового фото в галлерею - вызывается из 
+	*	[Profile Gallery]{@link module:@/components/profile/profile-gallery-widget}
+	*	@method addPhoto
+	**/
+	addPhoto() {
+		// Log method init
+		this.$log.debug('component \'@/components/profile/profile-mini\' -> Init fuction');
+	}
+}
+
+export default {
+	/**
+	* @typedef {array} &lt;strong>props&lt;/strong>
+	* 	@property {boolean} gallery_status - Статус модуля фото галлереи пользователя ([Gallery]{@link module:@/components/profile/profile-gallery-widget})
+	* 	@property {boolean} gallery_addNew - Стутс видимости кнопки "Добавить фото" ([Gallery]{@link module:@/components/profile/profile-gallery-widget})
+	*/
+	props: [
+		'gallery_status',
+		'gallery_addNew'
+	],
+
+	// Directives
+	directives: { focus: focus },
+
+	/**
+	* This module requires the components:&lt;br>
+	*
+	* - [Gallery widget]{@link module:@/components/profile/profile-gallery-widget} - user photo gallery widget&lt;br>
+	*/
+	components: {
+		'gallery-wigget' : Gallery,
+	},
+
+	// Set Data
+	asyncData({ store, route, userAgent }){
+		return {userAgent}
+	},
+	data: function(){ return data },
+
+	/**
+	* @desc ▶ Hook reporting &lt;br>
+	* 
+	* &lt;strong style="color:red; font-size: 18px;">ⓘ&lt;/strong>
+	* Set user data - call 
+	* &lt;strong>setUserData()&lt;/strong>&lt;br>
+	* 
+	* &lt;strong style="color:red; font-size: 18px;">ⓘ&lt;/strong>
+	* Get user photo gallery array - call 
+	* &lt;strong>getUserPhoto()&lt;/strong>&lt;br>
+	* 
+	* @event module:@/components/profile/profile-mini~COMPONENT &lt;strong>Profile-mini&lt;/strong> mounted
+	*/
+	mounted: function(){
+		// Log mounted hook
+		this.$log.info('component \'@/components/profile/profile-mini\' -> mounted');
+		
+		// Устанавливаем значения в объект user
+		this.setUserData();
+
+		// Запрашиваем массив фото для виджета фото галлереи
+		if(this.gallery_status) this.getUserPhoto();
+		else this.$log.warn('component \'@/components/profile/profile-mini\' -> mounted -> Photo Gallery widget is disabled');
+	},
+
+	// Watch
+	watch: {
+		'$auth.user': {
+			handler: function (val, oldVal) {
+				// Developer Debug
+				this.$log.debug('component \'@/components/profile/profile-mini\' -> Watch update - \'user\'');
+				this.setUserData();
+			},
+      		deep: true
+		},
+		
+	},
+	// Set Methods
+	methods: methods
+}</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	VictoriyaClub.com Copyright © 2016-2018
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on Mon Jul 9th 2018
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

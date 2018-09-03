@@ -1,0 +1,127 @@
+.wrapper-profile-mini {
+	background: lighten($color_gl2, 3%);
+	position: relative;
+	padding: 10px;
+	@include border-radius(4px 4px 0 0);
+
+	.avatar-user {
+		margin-right: 8px;
+		@include border-radius(4px);
+		overflow: hidden;
+		width: 80px;
+		height: 80px;
+		position: relative;
+
+		img {
+			max-width: 100%;
+		}
+
+		.my-webcam {
+			width: 29px;
+			height: 29px;
+			overflow: hidden;
+			position: absolute;
+			background: url('~/assets/images/source/video.png');
+			bottom: 2px;
+			right: 2px;
+		}
+	}
+
+	.user-info {
+		width: calc(100% - 88px);
+
+		.user-name {
+			font-size: 1rem;
+			line-height: 1rem;
+			font-weight: 600;
+			margin-top: 4px;
+			color: darken($color_g, 20%);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			cursor: default;
+		}
+
+		.edtit-user-name {
+			@include border-radius(4px);
+			border: 1px solid lighten($color_g, 11%);
+			max-width: 85%;
+			padding: 2px 4px;
+			margin-left: -4px;
+			height: 26px;
+			margin-top: -2px;
+			margin-bottom: -4px;
+
+			&:focus {
+				border-color: $color_1;
+			}
+		}
+
+		.user-status {
+			font-size: 0.75rem;
+			font-weight: normal;
+			color: lighten($color_g, 11%);
+			white-space: nowrap;
+			margin-top: 4px;
+		    line-height: 10px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			cursor: default;
+		}
+
+		.webcam-wrapper {
+			margin-top: 4px;
+			
+			button {
+				font-size: 11px;
+				color: $white;
+				background: #b3b3b3;
+				@include border-radius(4px);
+				cursor: pointer;
+				border: none;
+				height: 21px;
+				margin-bottom: 11px;
+				// padding: 1px 8px;
+				padding: 4px 4px;
+				line-height: 11px;
+
+				i {
+					font-size: 16px;
+					line-height: 11px;
+					position: relative;
+					top: 1px;
+					margin-right: 4px;
+				}
+
+				&:hover {
+					background: $color_1;
+
+					.active-span {
+						.count-browsing {
+							color: $color_1;
+						}
+					}
+				}
+
+				.active-span {
+					padding-left: 16px;
+
+					.count-browsing {
+						margin-left: 0px;
+						display: inline-block;
+						width: 14px;
+						height: 14px;
+						@include border-radius(50%);
+						color: #b3b3b3;
+						background: $white;
+						font-size: 10px;
+					    margin-left: 1px;
+					    line-height: 13px;
+					    position: relative;
+					    top: -2px;
+					}
+				}
+			}
+		}
+	}
+}

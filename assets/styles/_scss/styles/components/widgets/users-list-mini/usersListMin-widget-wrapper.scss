@@ -1,0 +1,147 @@
+.usersListMin-widget-wrapper {
+	border-top: 1px solid #CDCDCD;
+	padding: 8px 0;
+
+	.info-text {
+		padding: 0px 8px;
+		font-size: 11px;
+		line-height: 13px;
+		color: $color_g;
+		font-weight: 500;
+		margin-bottom: 8px;
+
+		.ratingInfo {
+	    	padding: 0px;
+	    	border: none;
+	    	font-size: 14px;
+	    	line-height: 10px;
+	    	margin-left: 3px;
+	    	color: #999999;
+	    	position: relative;
+	    	top: -1px;
+	    }
+	}
+
+	.swiper-wrapper{
+		padding-top: 2px;
+	}
+
+	.gallery-users-mini {
+		width: calc(100%);
+		padding-left: 12px;
+		padding-right: 12px;
+		position: relative;
+		margin-bottom: 8px;
+		overflow: hidden;
+
+		.gallery-users-mini-slide {
+			@include transition(all 0.4s);
+			max-height: 62px;
+
+			.swiper-lazy-preloader {
+				max-width: 100%;
+				top: 20px;
+				max-height: 100%;
+			}
+
+			img,
+			.img {
+				@include transition(all 0.4s);
+			}
+
+			.img {
+				width: 100%;
+				min-height: 40px;
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+
+			&:hover {
+				text-decoration: none;
+
+				img,
+				.img {
+					@include transform(scale(0.9));
+
+					& ~ .suitable {
+						> span {
+							color: $color_1;
+							font-weight: 500;
+						}
+					}
+				}
+			}
+
+			.suitable {
+			    font-size: 10px;
+			    line-height: 11px;
+			    color: $color_g;
+			    text-decoration: none !important;
+
+			    >span {
+			    	font-size: 11px;
+			    	color: #333333;
+			    	font-weight: 600;
+			    }
+			}
+
+			a, a:hover {
+			    text-decoration: none !important;
+			}
+
+			.new {
+				position: relative;
+
+				&:before {
+					content: 'NEW';
+					position: absolute;
+					top: -2px;
+					left: -1px;
+					@include border-radius(4px);
+					background: #febc64;
+					color: white;
+					padding: 1px 3px;
+					font-size: 9px;
+					z-index: 2;
+					letter-spacing: 1px;
+					line-height: 9px;
+				}
+			}
+		}
+
+		.btn-slider {
+			font-size: 16px;
+			color: $color_g;
+			height: 100%;
+			width: 11px;
+			background: $white;
+			position: absolute;
+			z-index: 1;
+			border: none;
+			padding: 0px;
+			top: 0;
+			bottom: 0;
+			cursor: pointer;
+			@include transition(all 0.24s);
+
+			i {
+				opacity: 0.6;
+			}
+
+			&.prev-btn-slider {
+				left: 0px;
+			}
+			&.next-btn-slider {
+				left: auto;
+				right: 0px;
+			}
+
+			&:hover {
+
+				i {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

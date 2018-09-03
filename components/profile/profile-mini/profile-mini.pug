@@ -1,0 +1,41 @@
+.wrapper-profile-mini.d-flex.flex-wrap
+	
+	//- config select list
+	b-dropdown.config-select-list(no-caret)
+		template(slot="button-content")
+			i.mdi.mdi-settings
+		b-dropdown-item(v-for="(item, index ) in config_menu", :to="(item.route_name && item.route_name !== '' ? { name: item.route_name } : item.link)", :key="index")
+			i(:class="item.icon")
+			|{{ item.title }}
+	//- config select list end
+	
+	.avatar-user
+		//- Avatar
+		img(v-lazy="user.avatar", :alt="user.avatarAlt")
+		.my-webcam(v-if="user.webcamActive")
+	.d-flex.flex-wrap.user-info
+		
+		//- Name
+		.user-name#pmi-user-name(v-if="!editName", @click="editNameFocus") {{ user.name }}
+		input.edtit-user-name#pmi-edit-name(v-show="editName", type="text", :value="user.name", @keyup="onKeyUp", v-focus="editName", @blur="editNameFocus")
+		
+		//- Status
+		.user-status#pmi-user-status(:title="user.status") {{ user.status }}
+		
+		//- Webcam
+		.webcam-wrapper(v-if="user.webcam")
+			button(v-if="user.webcam", type="button", @click="webcamToggle")
+				i.mdi.mdi-webcam
+				
+				//- Webcam no active
+				span(v-if="!user.webcamActive") {{ text.enable_webcam }}
+				//- Webcam active 
+				span(v-else) {{ text.disable_webcam }}
+					span.active-span(v-if="user.webcamActive")
+						i.mdi.mdi-stop-circle-outline
+						span.count-browsing(v-if="user.webcamBrowsing && user.webcamActive") {{ user.webcamBrowsing }}
+	//- User gallery
+	gallery-wigget(v-if="gallery_status !== false",
+					:photo="user.photos",
+					@add_photo="addPhoto",
+					:add_new_status="gallery_addNew")

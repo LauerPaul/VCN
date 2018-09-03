@@ -1,0 +1,75 @@
+.header-chat-container.d-flex(v-if="user")
+	.avatar-case
+		//- Photo
+		.user-avatar(:class="{small : user.webcamActive}")
+			img(:src="user.avatar", :alt="user.name")
+		//- Video
+		.user-video(v-if="user.webcamActive", :id="videoId")
+			img(src="@/assets/images/source/chat/video.jpg")
+			i.play.mdi.mdi-play-circle
+	
+	.info-case
+		.userName {{ user.name }}
+		.id ID: {{ user.id }}
+			span.labels(v-if="user.new")
+				span.label-new(v-if="user.new")
+
+		.compatibility-wrapper
+			.compatibility-header {{ text.compatibility }}
+				.float-right.value {{ user.progress }}%
+				.clearfix
+			.compatibility-line
+				span.compatibility-progress(:style="{width: user.progress + '%'}")
+
+		.compatibility-wrapper
+			.compatibility-header {{ text.rating }}
+				.float-right.value {{ user.rating }}
+				.clearfix
+			.compatibility-line
+				span.compatibility-progress(:style="{width: user.progress + '%'}")
+
+	.control-case
+		.status(:title="user.status") {{ user.status }}
+		.action-line.d-flex.align-items-center
+			span.notification(:title="title.notification") 100
+			span.message.action-btn(:title="title.message")
+				i.mdi.mdi-message
+			span.wink.action-btn(:title="title.wink")
+				i.mdi.mdi-eye
+			span.gift.action-btn(:title="title.gift")
+				i.mdi.mdi-gift
+			span.contacts.action-btn(:title="title.contacts")
+				i.mdi.mdi-phone
+			span.like.action-btn(:title="title.like")
+				i.mdi.mdi-thumb-up
+			span.info.action-btn(:title="title.questions")
+				i.mdi.mdi-help-circle
+
+		.webcam-line
+			span.webcam-status 
+				i.mdi.mdi-webcam.icon
+				|Web cam&nbsp;
+				span.status(v-if="user.webcam && user.webcamActive") On 
+				span.status(v-else) Off
+
+			button.webcam-toggle(type="button", @click.event="videoChatToggle(user.id)")
+				span.time(v-if="user.webcamActive") {{ text.video_chat }}
+				i.mdi.mdi-stop-circle-outline.icon(v-if="user.webcamActive")
+				span.time(v-if="!user.webcamActive") {{ text.startVideo }}
+
+		.action-line-second
+
+			//- Add to list widget
+			addToList-widget(:user_id="user.id")
+			
+			//- Notes widget
+			span.notes(:id="'note_'+user.id")
+				i.mdi.mdi-note-outline.icon
+				|{{ text.notes }} 
+			b-popover(:target="'note_'+user.id", triggers="hover focus", placement="bottom").note-case
+				template(slot="title") {{ text.notes }}
+				|{{ user.noteText }}
+						
+
+
+.header-chat-container.d-flex.align-items-center.justify-content-center(v-else) Loading ...

@@ -1,0 +1,6 @@
+.system-info-window(v-if="show")
+	.header-wrapper
+		.title {{ text.title }} 
+		span.close-btn(@click="closeWindow")
+			i.mdi.mdi-close
+	#content-wrapper-notify.content-wrapper

@@ -1,0 +1,57 @@
+/* First container */
+.last-container-wrapper {
+	padding: 5px;
+	width: 200px;
+    max-height: 100%;
+    float: left;
+
+	.wrapper-case {
+		width: 100%;
+		border: 1px solid $color_gl;
+	    box-shadow: 1px 0px 2px 0px rgba(0,0,0,.12);
+		@include border-radius(4px);
+		background: white;
+
+	    #lastContainer-scroll-wrapper {
+	    	max-height: calc(100% - 165px);
+			overflow-x: hidden;
+	    }
+
+		.header-case {
+			position: relative;
+			padding: 6px 8px;
+			border-bottom: 1px solid $color_gl;
+
+			.title {
+				font-weight: 600;
+				color: #333333;
+				line-height: 16px;
+			}
+
+			.config-select-list {
+				height: 24px;
+				bottom: -50%;
+				margin: auto;
+				right: 4px;
+				top: -50%;
+			}
+
+			.add-new-list {
+				position: absolute;
+				margin-right: 20px;
+				height: 24px;
+				top: -50%;
+				bottom: -50%;
+				margin: auto;
+				right: 24px;
+				left: auto;
+				cursor: pointer;
+
+				&:hover {
+					color: $color_1;
+				}
+			}
+		}
+
+	}
+}

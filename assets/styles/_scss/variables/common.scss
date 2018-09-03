@@ -1,0 +1,28 @@
+// VARIABLES
+
+// Colors
+$white: hsl(0, 0%, 100%);		//#ffffff
+
+$color_1: hsl(177, 42%, 54%);  	//#58bbb6
+$color_2: hsl(207, 39%, 47%);  	//#4a7ea8
+
+$color_g: hsl(0, 0%, 40%);  	//#666666 - gray
+$color_gl: hsl(210, 14%, 83%); 	//#ced4da - gray light
+$color_gl2: hsl(0, 0%, 94%); 	//#f0f0f0 - gray light 2
+
+// HEADER
+$header_bg: hsl(0, 0%, 98%);						//#fafafa - цвет фона header
+
+$searchBtn_bg: 					$color_gl2; 		//#f0f0f0 - цвет фона кнопки поиска
+$searchBtn_borderColor: 		$color_gl; 			//#ced4da - цвет рамки кнопки поиска
+$searchBtn_color: 				$color_g;			//#666666 - цвет текста кнопки поиска
+
+$searchBtn_bg_hover: 			$color_1; 			//#58bbb6 - цвет фона кнопки поиска при наведении
+$searchBtn_color_hover: 		$white;				//#ffffff - цвет рамки кнопки поиска при наведении
+$searchBtn_borderColor_hover: 	$color_1; 			//#58bbb6 - цвет текста кнопки поиска при наведении
+
+// Inputs
+$input-focus-bg:                        $input-bg !default;
+$input-focus-border-color:              hsl(177, 42%, 54%);
+$input-focus-color:                     $input-color;
+$input-focus-box-shadow:                none;

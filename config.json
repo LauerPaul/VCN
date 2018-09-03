@@ -1,0 +1,29 @@
+{
+	"path" : {
+		"app" : "assets/",
+		"dst" : "assets/",
+		"watch": {
+			"scss": "styles/_scss/**/*.scss",
+			"images": "images/**/*.*"
+		},
+
+		"css": {
+			"in": "styles/_scss/*.scss",
+			"out": "styles/",
+			"sourcemap": "maps/"
+		},
+		"images": {
+			"in": "images/tmp/**/*.*",
+			"out": "images/"
+		}
+	},
+
+
+	"prop" : {
+		"css": {
+			"min": false,
+			"concat": false,
+			"sourcemap": true
+		}
+	}
+}

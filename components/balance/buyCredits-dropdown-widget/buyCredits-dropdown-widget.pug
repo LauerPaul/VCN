@@ -1,0 +1,20 @@
+//- buyCredits-dropdown-widget
+b-dropdown.buy-credits-widget.mini(no-caret, v-if="packages")
+	template(slot="button-content") {{ btn_text }}
+	b-dropdown-item.title
+		.d-flex
+			.column-1
+				strong {{ titles.price }}
+			.column-2
+				strong {{ titles.amount }}
+			.column-3
+				strong {{ titles.save }}
+	b-dropdown-item(v-for="{price, amount, save} in packages", :key="price", href="#")
+		.d-flex
+			.column-1
+				|{{ currency_prefix }}{{ price }}{{ currency_postfix }}
+			.column-2
+				|{{ amount }}{{ credits_postfix }}
+			.column-3
+				span(v-if="save > 0 && typeof(save) === 'number'") {{ save }}{{save_postfix}}
+	b-dropdown-item.footer.text-center(href="#") {{ viewAll_text }}

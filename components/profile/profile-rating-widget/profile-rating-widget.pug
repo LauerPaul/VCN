@@ -1,0 +1,51 @@
+.rating-module-wrapper
+	//- Title widget
+	.title-module {{ text.profileTitleText }} {{ stepCurrent }}/{{ stepsCount }}
+		b-btn#ratingInfo.ratingInfo(variant="link")
+			i.mdi.mdi-help-circle
+		b-popover(target="ratingInfo",
+					:title="text.popoverTitle",
+					:content="text.popoverText",
+					triggers="hover focus",
+					placement="bottom")
+
+	//- Progress case
+	.rating-status-wrapper(v-if="progressStatus")
+		.title {{ text.progressCaseText }}
+		.progress-line-wrapper
+			span.progress-indicator(:style="{width: currentProcentProgress + '%'}")
+
+	.info-case(v-if="infoCaseStatus") {{ text.infoCaseText }}
+		b-btn#ratingInfo_2.ratingInfo(variant="link")
+			i.mdi.mdi-help-circle
+		b-popover(target="ratingInfo_2",
+					:title="text.popoverTitle",
+					:content="text.popoverText",
+					triggers="hover focus",
+					placement="bottom")
+
+	.questions-wrapper(v-if="questionStatus")
+		.header-line
+			span This girl asks a question:
+			span.girl-img(v-if="question.author", v-for="author in question.author")
+				img(v-lazy="author.img",
+					:alt="author.name",
+					:title="author.name",
+					style="max-width:30px")
+
+		.question {{ question.text }}
+		.answer-variables
+			.item(v-for="(item, index) in question.answerVariables",
+				:key="index",
+				:class="{selected: item.selected}",
+				@click="selectItem(index)") {{ item.text }}
+				i.mdi.mdi-check-circle.icon(v-if="item.selected")
+
+		.plus-info {{ text.infoTextQuestion }}
+
+		.footer-rating-module
+			.row
+				.col-6
+					span.go-to-edit-profile {{ text.edit_profile }}
+				.col-6.text-right
+					span.next-question {{ text.next_question }}

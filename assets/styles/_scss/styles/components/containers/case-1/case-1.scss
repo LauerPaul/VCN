@@ -1,0 +1,24 @@
+/* First container */
+.first-container {
+	padding: 5px;
+	width: 280px;
+    max-height: 100%;
+    float: left;
+    height: 100%;
+
+	.wrapper-case {
+		width: 100%;
+		border: 1px solid $color_gl;
+	    box-shadow: 1px 0px 2px 0px rgba(0,0,0,.12);
+		@include border-radius(4px);
+		background: white;
+		max-height: 100%;
+	    height: inherit;
+	}
+
+	#first-container-scroll-wrapper {
+	    border-top: 1px solid #CDCDCD;
+		max-height: calc(100% - 136px);
+		@include transition(all 0.4s);
+	}
+}

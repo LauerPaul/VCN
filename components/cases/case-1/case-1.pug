@@ -1,0 +1,33 @@
+section.first-container
+	.wrapper-case
+		
+		//- Если пользователь не авторизован
+		auth-widget(v-if="!$auth.$state.loggedIn")
+		//- Если пользователь авторизован
+		profile-mini-widget(v-if="$auth.$state.loggedIn && options.profile_widget_status",
+							:gallery_status="options.gallery_widget_status",
+							:gallery_addNew="options.gallery_widget_addNew")
+
+		#first-container-scroll-wrapper
+			.scrollCase
+
+				balance-widget(v-if="options.balance_widget_status && $auth.$state.loggedIn",
+								:buyCredits_dropdown_status="options.buyCredits_dropdown_status")
+
+				rating-widget(v-if="options.rating_widget_status && $auth.$state.loggedIn",
+								:progress_status="options.rating_widget_progress",
+								:infoCase_status="options.rating_widget_infoCase",
+								:question_status="options.rating_widget_question")
+
+				users-gallery-widget(v-if="options.users_gallery_mini_status",
+									:info_status="options.users_gallery_mini_infoCase",
+									:link="'url'")
+
+				notify-support-volume-line(v-if="options.system_line_widget_status && $auth.$state.loggedIn",
+											:notify_status="options.system_line_widget_notify_status",
+											:support_status="options.system_line_widget_support_status",
+											:volumeControl_status="options.system_line_widget_volumeControl_status",
+											@scrollUpdate="scrollUpdate")
+				
+				banner-mini-widget(v-if="options.banner_mini_widget_status",
+									:options="options.banner_mini_widget_data")
